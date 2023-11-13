@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
 /**
  * Permissible Dating Age program
  *
@@ -21,9 +24,17 @@ public class PDA
      */
     public void runEventLoop() {
         while (true) {
-	Scanner scanner = new Scanner(System.in);
-	
-	}
+            Scanner scanner = new Scanner(System.in);
+            int age = 0;
+            System.out.println("How old are you?");
+            try {
+                age = scanner.nextInt();
+                System.out.println(age);
+            } catch (InputMismatchException error) {
+                System.out.println("Please enter an integer");
+            }
+
+        }
      
     }
 
