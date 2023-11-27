@@ -25,13 +25,13 @@ public class PDA
     int realMaxAge = 0;
     boolean shouldContinue = true;
     public void getYoungerAge() { 
-        float getYoungerAge = age;
-        realMinAge = Math.round((age/2)+7);
+        realMinAge = (int) Math.round((age/2.0)+ 7);
     }
+
     public void getOlderAge() {
-        float getOlderAge = age;
-        realMaxAge = Math.round(age-7)*2;
+        realMaxAge = (int) Math.round((age-7)* 2.0);
     }
+
     /**
      * This is the main event loop for our PDA program
      */
@@ -46,13 +46,13 @@ public class PDA
                     shouldContinue = false;
                 }
                 if (age < LOWER_BOUND && age != 0) {
-                System.out.println(age  +" is too young!!");
-            } else if (age != 0){
-                getYoungerAge();
-                getOlderAge(); 
-                System.out.println("The age range goes from "+ realMinAge + " to "+ realMaxAge);
+                    System.out.println(age  +" is too young!!");
+                } else if (age != 0){
+                    getYoungerAge();
+                    getOlderAge(); 
+                    System.out.println("The age range goes from "+ realMinAge + " to "+ realMaxAge);
                 }
-            
+
             } catch (InputMismatchException error) {
                 scanner.next();
                 System.out.println("Please enter an integer");
